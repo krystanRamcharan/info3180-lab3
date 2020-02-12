@@ -1,8 +1,6 @@
 from flask_wtf import FlaskForm
 from wtforms import Form, StringField, TextAreaField,validators
-from flask_wtf.csrf import CSRFProtect
 
-csrf = CSRFProtect(app)
 
 class ContactForm(Form):
 name=StringField('Name',[validators.Length(min=5, max=10)])
