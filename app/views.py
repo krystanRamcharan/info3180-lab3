@@ -32,7 +32,7 @@ def contact():
                     mail.send(msg)
          flash('Message sent successfully')
       return redirect(url_for('/'))
-   return render_template('contact.html')
+   return render_template('contact.html',form=form)
     
 
 @app.route('/about/')
