@@ -26,15 +26,14 @@ def home():
 def contact():
     form = ContactForm()
     if request.method == 'POST':
-        return render_template('contact.html',form=form)
-                if form.validate_on_submit():
+                 if form.validate_on_submit():
                       msg=Message(request.form['subject'], sender = request.form['name'],request.form['email'],
                       recepients=[request.form['email']]) 
                       msg.body='This is the body'
                       mail.send(msg)
                      flash('Message sent successfully')
                 return redirect(url_for('/'))
-     
+    return render_template('contact.html',form=form)
     
 
 @app.route('/about/')
