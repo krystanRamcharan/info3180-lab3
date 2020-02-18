@@ -27,9 +27,9 @@ def contact():
     form = ContactForm()
     if form.validate_on_submit():
         msg = Message(request.form['subject'], 
-                      sender=request.form['name'],
+                      sender=(request.form['name'],
                       request.form['email']),
-        recipients=[form.email.data]
+        recipients=[form.email.data])
         msg.body='This is the body'
         mail.send(msg)
         flash('Message sent successfully')
