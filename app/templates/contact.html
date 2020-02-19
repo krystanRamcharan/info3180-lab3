@@ -7,27 +7,27 @@
 <form action= "{{ url_for('contact') }}", method= "post">
 
     <div class="form-group">
-        <p>Please enter your full name (Required)</p><br>
         {{form.name.label}}</br>
+        <p>Please enter your full name (Required)</p>
         {{form.name}}  
     </div>
     <br>
    <div class="form-group">
-       <p>Please enter your email address (Required)</p></br>
        {{form.email.label}}</br>
+       <p>Please enter your email address (Required)</p></br>
        {{form.email}}
     </div>
    <br>
     <div class="form-group">
-        <p>Please enter the subject of your message (Required) </p></br>
         {{form.subject.label}}</br>
+        <p>Please enter the subject of your message (Required) </p></br>
         {{form.subject}}
              
    </div>                                                                                 
   <br>
      <div class="form-group">
+         {{form.message.label}}</br>
          <p>Please enter the message you would like to send (Required)</p>
-        {{form.message.label}}</br>
         {{form.message}}</br>
         <button type ="submit">Send</button>
    </div>                                                                              
