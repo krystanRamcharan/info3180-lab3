@@ -5,7 +5,7 @@
 <p> Fill in this form to contact the site owners</p>
 <br>
 <form action= "{{ url_for('contact') }}", method= "post">
-
+      
     <div class="form-group">
         {{form.name.label}}</br>
         <p>Please enter your full name </p>
@@ -30,7 +30,8 @@
          <p>Please enter the message you would like to send </p>
         {{form.message}}</br>
         <button type ="submit">Send</button>
+        {{form.csrf_token}}
    </div>                                                                              
-  {{form.csrf_token}}
+  
 </form>
 {% endblock %}
