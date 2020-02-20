@@ -29,7 +29,7 @@ def contact():
         msg = Message(request.form['subject'], 
                       sender=(request.form['name'],
                       request.form['email']),
-        recipients=[form.email.data])
+        recipients=["7b8508f6d62ee5"]
         msg.body='This is the body'
         mail.send(msg)
         flash('Message sent successfully')
