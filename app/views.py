@@ -25,7 +25,7 @@ def home():
 @app.route('/contact', methods=['GET', 'POST'])
 def contact():
     form = ContactForm()
-    if form.validate_on_submit():
+    if request.method == 'POST' and form.validate_on_submit():
         msg = Message(request.form['subject'], 
                       sender=(request.form['name'],
                       request.form['email']),
